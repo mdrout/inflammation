@@ -21,4 +21,4 @@ COMMENT="This is new data $DEST"
 #$COMMENT
 git commit -m "'$COMMENT'"
 
-"New data has been added to the repository"
+echo "New data has been added to the repository"
