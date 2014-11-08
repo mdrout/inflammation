@@ -1,6 +1,6 @@
 # This script will take two inputs the date yyyy-mm-dd and the filename
 #
-# We want to call as: add_data.sh  filename DATE
+# We want to call as: add_data.sh  filename DATE location-of-raw-data
 #
 # 
 # 1st use filename as an input into the python script to retrive the drug name
@@ -13,12 +13,12 @@ DEST=../data/$2/$2-$DRUG.dat
 mkdir -p ../data/$2
 
 # Copy the data
-cp $1 $DEST
+cp $3/$1 $DEST
 
 # We are going to test adding backup to this
 git add $DEST
 COMMENT="This is new data $DEST"
-$COMMENT
+#$COMMENT
 git commit -m "'$COMMENT'"
 
-echo "New data has been added to the repository"
+"New data has been added to the repository"
