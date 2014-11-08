@@ -7,6 +7,14 @@
 # But then than just prints something to the screen, how do I use that?
 # This is how you save the out put into another variable.
 DRUG=$(python ../src/assign_drug.py $1)
+DEST=../data/$2/$2-$DRUG.dat
+# Copy the data
+cp $1 $DEST
 
-# Now we echo what this would have done
-echo cp $1 ../data/$2/$2-$DRUG.dat
+# We are going to test adding backup to this
+git add $DEST
+COMMENT="This is new data $DEST"
+$COMMENT
+git commit -m "'$COMMENT'"
+
+echo "New data has been added to the repository"
