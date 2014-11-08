@@ -8,6 +8,10 @@
 # This is how you save the out put into another variable.
 DRUG=$(python ../src/assign_drug.py $1)
 DEST=../data/$2/$2-$DRUG.dat
+
+# Need to create subdirectory within the date
+mkdir -p ../data/$2
+
 # Copy the data
 cp $1 $DEST
 
